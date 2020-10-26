@@ -1,0 +1,1 @@
+# django-team-picker-app
