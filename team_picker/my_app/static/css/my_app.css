@@ -1,0 +1,56 @@
+.navfont {
+  font-family: 'Chilanka', cursive;
+}
+
+.contentfont{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.myheader {
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  text-align: center;
+}
+
+#players-chosen-button {
+  align-content: center !important;
+}
+
+/*
+  Displaying 2 teams in separate columns
+*/
+
+.main_container{
+  display: flex;
+  width:800px;
+  align-content: center;
+  margin:0 auto;
+  text-allgn: center;
+}
+.fixed{
+    width: 400px;
+}
+.flex-item{
+    flex-grow: 1;
+}
+
+#red_team {
+  background: #ff9494;
+}
+
+#blue_team {
+  background: #9ccdff;
+}
+
+.player-chosen {
+  border-radius: 25px;
+  background: forestgreen;
+  width: 30px;
+  height: 30px;
+}
+
+.hide{
+  display: none !important;
+}

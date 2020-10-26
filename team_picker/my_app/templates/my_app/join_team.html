@@ -1,0 +1,26 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+
+      <div class="container myheader">
+        <div class="jumbotron">
+            <h1>Join Team Page</h1>
+        </div>
+      </div>
+
+      <div class="container myheader">
+        <div class="jumbotron">
+             <h1>{{ error }}</h1>
+              <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p>(If you don't know the password, ask someone from your team!)</p>
+                  <br>
+                <input type="submit" name="" value="Submit">
+              </form>
+            <br>
+
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'my_app/base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="myheader"><b>SQUAD PICKER</b></h1>
+    <h2 class="myheader">{{ team.name }}</h2>
+    <div class="container">
+      <div class="jumbotron">
+        <h3 class="myheader" id="who_is_playing">Who is playing today?</h3>
+        <h5 class="myheader" id="who_starts"></h5>
+        <h6 class="myheader" id="click_to_mark" style="color:grey;">Click to mark</h6>
+        <table class="table">
+            {% for member in team.members.all %}
+              <td id="players">
+                {{ member }}
+              </td>
+            {% endfor %}
+        </table>
+        <button id='players-chosen-button' class="btn btn-primary"
+                onclick="teamSelectionPhase()">Players chosen</button>
+      </div>
+    </div>
+    <div class="main_container">
+        <div id="red_team" class="fixed">
+            <h5 style="text-align: center;">Red Team</h5>
+            <table id="red-team-table" class="table">
+            </table>
+        </div>
+        <div id="blue_team" class="flex-item">
+            <h5 style="text-align: center">Blue Team</h5>
+            <table id="blue-team-table" class="table">
+            </table>
+        </div>
+    </div>
+
+<!-- JS -->
+<script src="{% static 'js/squad_picker.js' %}" type="text/javascript"></script>
+{% endblock %}

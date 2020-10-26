@@ -1,0 +1,33 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+
+    <div class="container myheader">
+      <div class="jumbotron">
+        <h1>Home page</h1>
+      </div>
+    </div>
+
+    <div class="container myheader">
+      <div class="jumbotron">
+          <h5>This page will help you to choose the teams for your football match!</h5>
+          <h6>( Use the navigation bar at the top of the page)</h6>
+      </div>
+    </div>
+    {% if not user.is_authenticated %}
+    <div class="container">
+      <div class="jumbotron">
+        <h4>You are not logged in.</h4>
+        <h5><a href="{% url 'login' %}">Login here!</a></h5>
+      </div>
+    </div>
+    {% else %}
+    <div class="container myheader">
+      <div class="jumbotron">
+        <h8>You have succesfully logged in!</h8>
+      </div>
+    </div>
+
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+<div class="container myheader">
+  <div class="jumbotron">
+    <h4> Details page of : <b>{{ team.name }}</b></h4>
+</div>
+</div>
+<div class="container" style="text-align:center;margin:auto;padding-bottom: 30px;">
+    <a href="{% url 'squad_picker' team_name=team.name %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Run squad picker!</a>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <h5> Team members: </h5>
+    {% for member in team.members.all %}
+      <ul>
+        <li>{{ member }}</li>
+      </ul>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

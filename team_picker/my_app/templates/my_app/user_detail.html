@@ -1,0 +1,23 @@
+{% extends 'my_app/base.html' %}
+
+{% block content %}
+
+    <div class="container myheader">
+        <div class="jumbotron">
+            <h1>User Page</h1>
+            <h2>{{ user }}</h2>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+              <h5 class="myheader">Teams you are the member of:</h5>
+              {% for each in user.membership_set.all %}
+                  <ul>
+                    <li><a href="{% url 'team_detail' pk=each.team.pk %}">{{ each.team }}</a></li>
+                  </ul>
+              {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
